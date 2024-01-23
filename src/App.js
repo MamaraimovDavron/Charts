@@ -2,9 +2,10 @@ import React from "react";
 import MyLine from "./components/Line/index";
 import styled from "styled-components";
 import MyBar from "./components/Bar";
+import PolarAreaChart from "./components/PolarAreChart";
 
 const Main = styled.div`
-  width: 100%;
+  width: 40%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -13,23 +14,26 @@ const Main = styled.div`
   box-sizing: border-box;
 `;
 
-const LineBox = styled.div`
-  width: 45%;
-`;
+// const LineBox = styled.div`
+//   width: 45%;
+// `;
 
-const BarBox = styled.div`
-  width: 50%;
-  /* border: 1px solid red; */
-`;
+// const BarBox = styled.div`
+//   width: 50%;
+//   /* border: 1px solid red; */
+// `;
+
 const App = () => {
   return (
     <Main>
-      <LineBox>
+      {/* <LineBox>
         <MyLine />
       </LineBox>
       <BarBox>
         <MyBar />
-      </BarBox>
+      </BarBox> */}
+
+      <PolarAreaChart />
     </Main>
   );
 };
