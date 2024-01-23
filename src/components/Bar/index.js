@@ -14,7 +14,7 @@ ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 const MyBar = () => {
   return (
     <Bar
-      datasetIdKey="id"
+      //   datasetIdKey="id"
       data={{
         labels: ["January", "February", "March", "April", "May", "June"],
         datasets: [
