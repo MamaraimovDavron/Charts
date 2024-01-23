@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import MyLine from "./components/Line/index";
+import styled from "styled-components";
+import MyBar from "./components/Bar";
 
-function App() {
+const Main = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid green; */
+  box-sizing: border-box;
+`;
+
+const LineBox = styled.div`
+  width: 45%;
+`;
+
+const BarBox = styled.div`
+  width: 50%;
+  /* border: 1px solid red; */
+`;
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Main>
+      <LineBox>
+        <MyLine />
+      </LineBox>
+      <BarBox>
+        <MyBar />
+      </BarBox>
+    </Main>
   );
-}
+};
 
 export default App;
