@@ -1,6 +1,7 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
 import styled from "styled-components";
+import { faker } from "@faker-js/faker";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -30,41 +31,49 @@ const Box = styled.div`
     font-weight: bold;
   }
 `;
+
+const labels = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+const data = {
+  labels,
+  datasets: [
+    {
+      id: 1,
+      label: "Sales",
+      data: labels.map((item) => faker.datatype.number({ min: 0, max: 1000 })),
+      borderColor: "gray",
+      backgroundColor: "#714BE7",
+      borderWidth: 5,
+      fontWeightL: "600",
+      color: "white",
+    },
+  ],
+};
+console.log(faker.datatype.number({ min: 0, max: 1000 }));
 export default function index() {
   return (
     <Box>
       <Line
         className="line"
         datasetIdKey="id"
-        data={{
-          labels: [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December",
-          ],
-          datasets: [
-            {
-              label: "Sales",
-              data: [
-                3990, 3789, 2810, 4000, 3780, 2890, 3200, 3700, 4200, 3200,
-                3390, 3890,
-              ],
-              borderColor: "gray",
-              backgroundColor: "#714BE7",
-              borderWidth: 5,
-              fontWeightL: "600",
-              color: "white",
-            },
-          ],
+        data={data}
+        onClick={() => {
+          console.log(
+            labels.map((item) => faker.datatype.number({ min: 0, max: 1000 }))
+          );
         }}
       />
     </Box>
